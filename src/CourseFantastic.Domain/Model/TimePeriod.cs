@@ -1,23 +1,28 @@
 using System;
 namespace CourseFantastic.Domain.Model {
 	public class TimePeriod {
-		private DateTime start;
-		private DateTime end;
+        private DateTime _start;
 
-		public int GetMinutes() {
-			throw new System.Exception("Not implemented");
-		}
-		public int GetHours() {
-			throw new System.Exception("Not implemented");
-		}
-		public int GetDays() {
-			throw new System.Exception("Not implemented");
-		}
+        public DateTime Start
+        {
+            get { return _start; }
+            set { _start = value; }
+        }
+        private DateTime _end;
+
+        public DateTime End
+        {
+            get { return _end; }
+            set { _end = value; }
+        }
+
+		
 		public string GetFormatted() {
-			throw new System.Exception("Not implemented");
+            return String.Format("From: {0:d} to {1:d}", Start, End);
 		}
 		public TimePeriod(DateTime start, DateTime end) {
-			throw new System.Exception("Not implemented");
+            Start = start;
+            End = end;
 		}
 
 

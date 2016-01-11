@@ -1,28 +1,39 @@
 using System;
-namespace CourseFantastic.Domain.Model {
-	public class AssessmentEvent {
-		/// <summary>
-		/// either due date or assessment date depending on the assessment type
-		/// i.e. Portfolio type would have startDate, endDate while Exam may only have date
-		/// </summary>
-		private DateTime briefingDate;
-		private string location;
+namespace CourseFantastic.Domain.Model
+{
+    public class AssessmentEvent
+    {
+        /// <summary>
+        /// either due date or assessment date depending on the assessment type
+        /// i.e. Portfolio type would have startDate, endDate while Exam may only have date
+        /// </summary>
+        /// 
 
-		public AssessmentEvent(AssessmentType type, string location, SubjectDelivery subject) {
-			;
-		}
-		public AssessmentEvent(AssessmentType type, string location, DateTime briefingDate, SubjectDelivery subject) {
-			throw new System.Exception("Not implemented");
-		}
-		public AssessmentEvent(AssessmentType type, string location, SubjectDelivery subject, DateTime startDate, DateTime endDate) {
-			throw new System.Exception("Not implemented");
-		}
-
-		private TimePeriod timePeriod;
-		private AssessmentType type;
-
-		private SubjectDelivery _subject;
-
+        private TimePeriod _timePeriod;
+        public TimePeriod TimePeriod
+        {
+            get
+            {
+                return _timePeriod;
+            }
+            set
+            {
+                _timePeriod = value;
+            }
+        }
+        private AssessmentType _type;
+        public AssessmentType Type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                _type = value;
+            }
+        }
+        private SubjectDelivery _subject;
         public SubjectDelivery Subject
         {
             get
@@ -36,18 +47,51 @@ namespace CourseFantastic.Domain.Model {
             }
         }
 
-        public AssessmentType Type
+        private DateTime _briefingDate;
+        public DateTime BriefingDate
         {
             get
             {
-                return type;
+                return _briefingDate;
             }
 
             set
             {
-                type = value;
+                _briefingDate = value;
             }
         }
+        private string _location;
+        public string Location
+        {
+            get
+            {
+                return _location;
+            }
+
+            set
+            {
+                _location = value;
+            }
+        }
+
+
+        public AssessmentEvent(AssessmentType type, string location, SubjectDelivery subject)
+        {
+            Type = type;
+            Location = location;
+            Subject = subject;
+        }
+        public AssessmentEvent(AssessmentType type, string location, SubjectDelivery subject, DateTime briefingDate)
+            : this(type, location, subject)
+        {
+            BriefingDate = briefingDate;
+        }
+        public AssessmentEvent(AssessmentType type, string location, SubjectDelivery subject, DateTime startDate, DateTime endDate)
+            : this(type, location, subject)
+        {
+            TimePeriod = new TimePeriod(startDate, endDate);
+        }
+
     }
 
 }

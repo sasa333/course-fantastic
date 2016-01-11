@@ -6,8 +6,7 @@ namespace CourseFantastic.Domain.Model {
 		Petersham,
 		StGeorge,
 		Enmore,
-		Randwick,
-
+        Randwick,
 	}
 
 }

@@ -5,7 +5,7 @@ namespace CourseFantastic.Domain.Model {
 		C3Web,
 		C3Support,
 		C4Networking,
-		C4programming,
+		C4Programming,
 		C4Web,
 		DipNetworking,
 		DipWeb,

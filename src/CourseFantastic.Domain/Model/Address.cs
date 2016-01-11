@@ -1,12 +1,14 @@
 using Model;
 using System;
-namespace CourseFantastic.Domain.Model {
-	public class Address {
-		private string _streetNumber;
-		private string _streetName;
-		private string _suburb;
-		private State _state;
-		private string _postCode;
+namespace CourseFantastic.Domain.Model
+{
+    public class Address
+    {
+        private string _streetNumber;
+        private string _streetName;
+        private string _suburb;
+        private State _state;
+        private string _postCode;
 
         public string StreetNumber
         {
@@ -81,11 +83,11 @@ namespace CourseFantastic.Domain.Model {
             State = state;
             PostCode = postCode;
         }
-		public string GetFullAddress() {
-			return String.Format("{0} {1}\n{2}, {3}, {4}", StreetNumber, StreetName, Suburb, State, PostCode);
-		}
+        public string GetFullAddress()
+        {
+            return String.Format("{0} {1}\n{2}, {3}, {4}", StreetNumber, StreetName, Suburb, State, PostCode);
+        }
 
-
-	}
+    }
 
 }

@@ -1,22 +1,43 @@
 using System;
-namespace CourseFantastic.Domain.Model {
-	public class Attendance {
-		private DateTime checkIn;
-		private DateTime checkOut;
+namespace CourseFantastic.Domain.Model
+{
+    public class Attendance
+    {
+        private DateTime _checkIn;
+        public DateTime CheckIn
+        {
+            get { return _checkIn; }
+            set { _checkIn = value; }
+        }
 
-		public Attendance(DateTime checkIn) {
-			throw new System.Exception("Not implemented");
-		}
-		public DateTime GetCheckOut() {
-			return this.checkOut;
-		}
-		public void SetCheckOut(DateTime checkOut) {
-			this.checkOut = checkOut;
-		}
+        private DateTime _checkOut;
+        public DateTime CheckOut
+        {
+            get { return _checkOut; }
+            set { _checkOut = value; }
+        }
 
-		private Learner learner;
-		private TimeTableItem session;
+        private Learner _learner;
 
-	}
+        public Learner Learner
+        {
+            get { return _learner; }
+            set { _learner = value; }
+        }
+
+        private TimeTableItem _session;
+
+        public TimeTableItem Session
+        {
+            get { return _session; }
+            set { _session = value; }
+        }
+
+        public Attendance(DateTime checkIn)
+        {
+            CheckIn = checkIn;
+        }
+
+    }
 
 }
