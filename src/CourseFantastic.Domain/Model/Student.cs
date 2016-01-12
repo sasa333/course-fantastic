@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CourseFantastic.Domain.Model;
 using CourseFantastic.Domain.Services;
 
 namespace CourseFantastic.Domain.Model
@@ -15,7 +16,7 @@ namespace CourseFantastic.Domain.Model
             set { _attendance = value; }
         }
         private List<Enrolment> _enrolments;
-
+        
         public List<Enrolment> Enrolments
         {
             get { return _enrolments; }
@@ -47,12 +48,16 @@ namespace CourseFantastic.Domain.Model
         {
             Person = person;
             StudentID = studentID;
+            _attendance = new Dictionary<string, List<Attendance>>();
 
         }
         public Student(Person person, string studentID, Enrolment enrolment)
             : this(person, studentID)
         {
             Enrolments.Add(enrolment);
+            foreach (var subject in enrolment.CourseRun.Subjects) {
+                Attendance.Add()
+            }
         }
 
         public List<Enrolment> GetActiveEnrolments()

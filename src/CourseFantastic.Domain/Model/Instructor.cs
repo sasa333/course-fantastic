@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace CourseFantastic.Domain.Model {
 	public interface Instructor {
 
-		InstructorAssignment CreateAssignment( string employeeID,  string subjectDeliveryID,  InstructorAssignmentRole role);
+		InstructorAssignment CreateAssignment( Instructor teacher,  SubjectDelivery subject,  InstructorAssignmentRole role);
 		List<InstructorAssignment> FetchActiveAssignments();
 
 	}

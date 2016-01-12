@@ -14,7 +14,7 @@ namespace CourseFantastic.Domain.Model
             set { _semesterDates = value; }
         }
 
-
+        private List<Enrolment> _enrolments;
         private Course _course;
 
         public Course Course
@@ -62,8 +62,19 @@ namespace CourseFantastic.Domain.Model
             set { _subjects = value; }
         }
 
+        public List<Enrolment> Enrolments
+        {
+            get
+            {
+                return _enrolments;
+            }
 
-       
+            set
+            {
+                _enrolments = value;
+            }
+        }
+
         public CourseDelivery(Course course, College college, DateTime startDate, DateTime endDate)
         {
             Course = course;
@@ -100,7 +111,11 @@ namespace CourseFantastic.Domain.Model
 
         }
 
-
+        public Enrolment Enrol(Learner student) {
+            var enrolment = new Enrolment(student, this);
+            Enrolments.Add(enrolment);
+            return enrolment;
+        }
 
 
         public SubjectDelivery AddSubjectDelivery(String name, string description, CourseDelivery courseDelivery)

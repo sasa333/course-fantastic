@@ -4,10 +4,16 @@ using System.Collections.Generic;
 namespace CourseFantastic.Domain.Model {
 	public class TimeTableItem {
 		private string _location;
-
-		public TimeTableItem(TimePeriod timePeriod, string location) {
-			throw new System.Exception("Not implemented");
-		}
+        public TimeTableItem(TimePeriod timePeriod, string location)
+        {
+            TimePeriod = timePeriod;
+            Location = location;
+        }
+        public TimeTableItem(DateTime starTime, DateTime endTime, String location): this(new TimePeriod(starTime, endTime), location )
+	    {
+	            
+	    }
+       
 
 		private TimePeriod _timePeriod;
 		private List<Attendance> _roll;

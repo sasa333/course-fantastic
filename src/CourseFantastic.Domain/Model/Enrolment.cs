@@ -19,6 +19,7 @@ namespace CourseFantastic.Domain.Model {
 		public Enrolment(Learner learner, CourseDelivery courseRun) {
             Learner = learner;
             CourseRun = courseRun;
+
 		}
 
 	}

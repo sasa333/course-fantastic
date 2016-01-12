@@ -35,13 +35,8 @@ namespace CourseFantastic.Domain.Model
             set { _description = value; }
         }
 
-        private string _version;
+        public string Version { get; set; }
 
-        public string Version
-        {
-            get { return _version; }
-            set { _version = value; }
-        }
         private List<AssessmentEvent> _assessments;
 
         public List<AssessmentEvent> Assessments
