@@ -66,15 +66,12 @@ namespace CourseFantastic.Domain.Model
         {
             return Enrolments.Where(e => e.CourseRun.DeliveryPeriod.End >= DateTime.Now).ToList();
         }
-        public Enrolment Enrol(string callOccCode)
-        {
 
-          throw new NotImplementedException();
-        }
 
         public Attendance CheckIn(DateTime start)
         {
-            throw new NotImplementedException();
+            var result = new Attendance(start);
+            return result;
         }
 
         public Attendance CheckOut(DateTime end)

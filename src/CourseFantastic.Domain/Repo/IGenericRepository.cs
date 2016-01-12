@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourseFantastic.Domain.Model
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T> : IDisposable
     {
         List<T> GetAll();
         List<T> GetAll(College college, ISemesterDates semester);
