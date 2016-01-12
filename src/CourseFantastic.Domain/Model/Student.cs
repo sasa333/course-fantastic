@@ -51,13 +51,15 @@ namespace CourseFantastic.Domain.Model
             _attendance = new Dictionary<string, List<Attendance>>();
 
         }
-        public Student(Person person, string studentID, Enrolment enrolment)
-            : this(person, studentID)
+        public Enrolment CreateEnrolment (CourseDelivery course)
         {
-            Enrolments.Add(enrolment);
-            foreach (var subject in enrolment.CourseRun.Subjects) {
-                Attendance.Add()
+            var result = new Enrolment(this, course);
+            Enrolments.Add(result);
+            foreach (var subject in result.CourseRun.Subjects) {
+                Attendance.Add(subject.Name, new List<Attendance>());
             }
+            course.Enrolments.Add(result);
+            return result;
         }
 
         public List<Enrolment> GetActiveEnrolments()
