@@ -5,7 +5,7 @@ namespace CourseFantastic.Domain.Model
 {
     public interface Learner
     {
-        Enrolment Enrol(string callOccCode);
+        Enrolment CreateEnrolment(CourseDelivery course);
         List<Enrolment> GetActiveEnrolments();
 
         Attendance CheckIn(DateTime start);
