@@ -13,6 +13,20 @@ using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace CourseFantastic.Api.Controllers
 {
+    public static class FakePersonRepositoryFactory
+    {
+        public static Domain.Repo.FakePersonRepository Create(IServiceProvider serviceProvider)
+        {
+            var repoPerson = new Domain.Repo.FakePersonRepository();
+
+            repoPerson.Add(new Person("Sasha", "Stevanovic", DateTime.Now, "sasha.s@email.com"));
+            repoPerson.Add(new Person("Juan", "Rondon", DateTime.Now, "juan.r@email.com"));
+            repoPerson.Add(new Person("Nick", "Attlee", DateTime.Now, "nick.a@email.com"));
+
+            return repoPerson;
+        }
+    }
+
     [Route("api/people")]
     public class PeopleController : Controller
     {
@@ -27,8 +41,16 @@ namespace CourseFantastic.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            // TODO: Get all the people from the data store
-            return Ok();
+            var result = _repoPerson.GetAll().Select(p => new PersonGeneralViewModel()
+            {
+                FirstName = p.FirstName,
+                Surname = p.Surname,
+                Email = p.Email,
+                DoB = p.Dob
+            }).ToList();
+
+
+            return Ok(result);
         }
 
         // GET api/values/5
@@ -62,8 +84,28 @@ namespace CourseFantastic.Api.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]PersonGeneralViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return HttpBadRequest(ModelState);
+            }
+
+            var person = _repoPerson.GetById(id.ToString());
+
+            if (person == null)
+            {
+                return HttpNotFound();
+            }
+
+            person.FirstName = model.FirstName;
+            person.Surname = model.Surname;
+            person.Dob = model.DoB;
+            person.Email = model.Email;
+
+            _repoPerson.Update(person);
+
+            return Ok(model);
         }
 
         // DELETE api/values/5

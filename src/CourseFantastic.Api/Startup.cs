@@ -28,6 +28,8 @@ namespace CourseFantastic.Api
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddScoped<Domain.Model.IGenericRepository<Domain.Model.Person>, Domain.Repo.FakePersonRepository>(Controllers.FakePersonRepositoryFactory.Create);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

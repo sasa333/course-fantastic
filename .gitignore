@@ -210,3 +210,13 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# Bower Packages
+bower_components/
+
+# Node Packages
+node_modules/
+
+# Other (Web Application)
+dist/
+.temp/

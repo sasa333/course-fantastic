@@ -29,9 +29,9 @@ namespace CourseFantastic.Domain.Repo
 
 
 
-        public CourseDelivery GetByCallOccCode(string callOccCode)
+        public CourseDelivery GetById(string id)
         {
-            return _courses.Where(c => c.CallOccCode == callOccCode).FirstOrDefault();
+            return _courses.Where(c => c.CallOccCode == id).FirstOrDefault();
         }
 
         public void Add(CourseDelivery entity)

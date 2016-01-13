@@ -16,6 +16,26 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseFantastic.Domain", "s
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Modeling", "Modeling\Modeling.modelproj", "{37B69FF3-CE38-42D9-A960-2F053CA611F2}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CourseFantastic.WebApp", "src\CourseFantastic.WebApp\", "{5DF8117B-DC9A-4751-8DEA-3493554014E5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_18458"
+		Debug.AspNetCompiler.PhysicalPath = "src\CourseFantastic.WebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_18458\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_18458"
+		Release.AspNetCompiler.PhysicalPath = "src\CourseFantastic.WebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_18458\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "18458"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +54,10 @@ Global
 		{37B69FF3-CE38-42D9-A960-2F053CA611F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37B69FF3-CE38-42D9-A960-2F053CA611F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37B69FF3-CE38-42D9-A960-2F053CA611F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +65,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{60D46E31-3B47-4F7A-A6AD-AC5DF82521D0} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
 		{A01BEE49-837E-418B-BC3A-C121135F7452} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
+		{5DF8117B-DC9A-4751-8DEA-3493554014E5} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
 	EndGlobalSection
 EndGlobal

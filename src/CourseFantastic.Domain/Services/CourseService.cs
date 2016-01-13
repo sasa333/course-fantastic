@@ -14,7 +14,7 @@ namespace CourseFantastic.Domain.Services
         FakeCourseDeliveryRepository repo = new FakeCourseDeliveryRepository();
         public CourseDelivery FetchCourse(string callOccCode)
         {
-            return repo.GetByCallOccCode(callOccCode);
+            return repo.GetById(callOccCode);
         }
 
         public List<CourseDelivery> FetchCourses(FakeSemester semester, College college)

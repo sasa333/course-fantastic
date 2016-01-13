@@ -9,7 +9,7 @@ namespace CourseFantastic.Domain.Model
     public interface IGenericRepository<T> : IDisposable
     {
         List<T> GetAll();
-        List<T> GetAll(College college, ISemesterDates semester);
+        T GetById(string id);
         void Add(T entity);
         void Remove(T entity);
         void Update(T entity);
