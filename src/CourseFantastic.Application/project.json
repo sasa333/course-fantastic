@@ -1,0 +1,16 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "CourseFantastic.Application Class Library",
+  "authors": [ "sstevanovic" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "CourseFantastic.Domain": "",
+    "CourseFantastic.DataAccess": "",
+    "CourseFantastic.Parse": ""
+  },
+  "frameworks": {
+    "dnx451": { }
+  }
+}

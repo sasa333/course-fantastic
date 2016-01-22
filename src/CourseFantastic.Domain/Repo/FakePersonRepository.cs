@@ -15,9 +15,10 @@ namespace CourseFantastic.Domain.Repo
             _people = new List<Person>();
         }
 
-        public void Add(Person entity)
+        public async Task<Person> Add(Person entity)
         {
             _people.Add(entity);
+            return entity;
         }
 
         public List<Person> GetAll()

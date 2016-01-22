@@ -1,0 +1,18 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "CourseFantastic.DataAccess Class Library",
+  "authors": [ "sstevanovic" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "dnx451": { }
+  },
+  "dependencies": {
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+    "EntityFramework.Commands": "7.0.0-rc1-final"
+  },
+  "commands": {
+    "ef": "EntityFramework.Commands"
+  }
+}

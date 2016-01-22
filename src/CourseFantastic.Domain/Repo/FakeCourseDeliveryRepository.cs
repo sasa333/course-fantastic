@@ -34,7 +34,7 @@ namespace CourseFantastic.Domain.Repo
             return _courses.Where(c => c.CallOccCode == id).FirstOrDefault();
         }
 
-        public void Add(CourseDelivery entity)
+        public Task<CourseDelivery> Add(CourseDelivery entity)
         {
             throw new NotImplementedException();
         }

@@ -26,7 +26,7 @@ namespace CourseFantastic.Domain.Repo
             throw new NotImplementedException();
         }
 
-        public void Add(SubjectDelivery entity)
+        public Task<SubjectDelivery> Add(SubjectDelivery entity)
         {
             throw new NotImplementedException();
         }

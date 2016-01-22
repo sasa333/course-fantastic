@@ -4,6 +4,8 @@ namespace CourseFantastic.Domain.Model
 {
     public class Person
     {
+        public string Identity { get; set; }
+
         private string _firstName;
 
         public string FirstName

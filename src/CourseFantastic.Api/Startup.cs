@@ -7,6 +7,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CourseFantastic.Parse;
 
 namespace CourseFantastic.Api
 {
@@ -29,7 +30,9 @@ namespace CourseFantastic.Api
             // Add framework services.
             services.AddMvc();
 
-            services.AddScoped<Domain.Model.IGenericRepository<Domain.Model.Person>, Domain.Repo.FakePersonRepository>(Controllers.FakePersonRepositoryFactory.Create);
+            //services.AddScoped<Domain.Model.IGenericRepository<Domain.Model.Person>, Domain.Repo.FakePersonRepository>(Controllers.FakePersonRepositoryFactory.Create);
+            services.AddScoped<Application.Users.PeopleApplicationService, Application.Users.PeopleApplicationService>();
+            services.AddScoped<Domain.Model.IGenericRepository<Domain.Model.Person>, Parse.Repositories.ParsePersonRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +46,8 @@ namespace CourseFantastic.Api
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            AppInit.Initialize();
         }
 
         // Entry point for the application.

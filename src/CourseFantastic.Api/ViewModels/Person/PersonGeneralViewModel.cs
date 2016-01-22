@@ -7,10 +7,11 @@ namespace CourseFantastic.Api.ViewModels.Person
 {
     public class PersonGeneralViewModel
     {
+        public string Identity { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public DateTime DoB { get; set; }
         public string Email { get; set; }
-
+        public string Mobile { get; set; }
     }
 }

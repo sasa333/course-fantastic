@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "CourseFantastic.Parse Class Library",
+  "authors": [ "sstevanovic" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "Parse": "1.7.0",
+        "CourseFantastic.Domain": ""
+      },
+      "frameworkAssemblies": {
+        "System.Runtime": "4.0.10.0",
+        "System.Threading.Tasks": "4.0.0.0"
+      }
+    }
+  },
+  "dependencies": {
+  }
+}

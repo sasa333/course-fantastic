@@ -10,7 +10,7 @@ namespace CourseFantastic.Domain.Model
     {
         List<T> GetAll();
         T GetById(string id);
-        void Add(T entity);
+        Task<T> Add(T entity);
         void Remove(T entity);
         void Update(T entity);
         string GetNextMajorVersion();

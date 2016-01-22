@@ -34,7 +34,14 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CourseFantastic.WebApp", "s
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "18458"
+		SlnRelativePath = "src\CourseFantastic.WebApp\"
 	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseFantastic.DataAccess", "src\CourseFantastic.DataAccess\CourseFantastic.DataAccess.xproj", "{305A5B5D-E018-4698-9729-8411DE757469}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseFantastic.Parse", "src\CourseFantastic.Parse\CourseFantastic.Parse.xproj", "{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseFantastic.Application", "src\CourseFantastic.Application\CourseFantastic.Application.xproj", "{7BF95505-4C8A-4EE9-965E-9FB1FA740313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +65,18 @@ Global
 		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{5DF8117B-DC9A-4751-8DEA-3493554014E5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{305A5B5D-E018-4698-9729-8411DE757469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305A5B5D-E018-4698-9729-8411DE757469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305A5B5D-E018-4698-9729-8411DE757469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305A5B5D-E018-4698-9729-8411DE757469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF95505-4C8A-4EE9-965E-9FB1FA740313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF95505-4C8A-4EE9-965E-9FB1FA740313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF95505-4C8A-4EE9-965E-9FB1FA740313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF95505-4C8A-4EE9-965E-9FB1FA740313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +85,8 @@ Global
 		{60D46E31-3B47-4F7A-A6AD-AC5DF82521D0} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
 		{A01BEE49-837E-418B-BC3A-C121135F7452} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
 		{5DF8117B-DC9A-4751-8DEA-3493554014E5} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
+		{305A5B5D-E018-4698-9729-8411DE757469} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
+		{6FEF25A6-EDBB-49D5-8300-97A9D1D5AC0E} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
+		{7BF95505-4C8A-4EE9-965E-9FB1FA740313} = {79352A19-FBBD-473D-95E4-6ED79664BEFC}
 	EndGlobalSection
 EndGlobal

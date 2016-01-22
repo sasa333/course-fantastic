@@ -8,6 +8,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Extensions;
 using Microsoft.AspNet.Mvc;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
+using CourseFantastic.Application.Users;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,10 +31,12 @@ namespace CourseFantastic.Api.Controllers
     [Route("api/people")]
     public class PeopleController : Controller
     {
-        private IGenericRepository<Person> _repoPerson; 
+        private PeopleApplicationService _servicePerson;
+        private IGenericRepository<Person> _repoPerson;
 
-        public PeopleController(IGenericRepository<Person> repoPerson)
+        public PeopleController(PeopleApplicationService servicePerson, IGenericRepository<Person> repoPerson)
         {
+            _servicePerson = servicePerson;
             _repoPerson = repoPerson;
         }
 
@@ -62,21 +65,16 @@ namespace CourseFantastic.Api.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]PersonGeneralViewModel model)
+        public async Task<IActionResult> Post([FromBody]PersonGeneralViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return HttpBadRequest(ModelState);
             }
 
-            var person = new Person(
-                firstName: model.FirstName,
-                surname: model.Surname,
-                dob: model.DoB,
-                email: model.Email
-                );
+            var person = await _servicePerson.CreatePerson(model.FirstName, model.Surname, model.DoB, model.Email, String.Empty);
 
-            _repoPerson.Add(person);
+            model.Identity = person.Identity;
 
             // TODO: Look at how we want to have global identity for the person domain concept
             return Created(Request.GetEncodedUrl() + model.GetHashCode(), model);
